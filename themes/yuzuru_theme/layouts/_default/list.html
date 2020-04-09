@@ -20,7 +20,7 @@
   <div class="row">
     <section>
       <article class="mx-auto _index_article">
-        {{- range .Paginator.Pages }}
+        {{- range (where .Paginator.Pages "Type" "posts")}}
         <!-- card -->
         <div class="card">
           <div class="card-body">
