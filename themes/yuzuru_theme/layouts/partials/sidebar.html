@@ -1,0 +1,38 @@
+<aside>
+  <div class="mx-auto _siderbar_div">
+    <img
+    src="/uploads/banner1.jpg"
+    style="width: 100%;"
+  />
+  </div>
+
+  <br />
+
+  <div class="mx-auto _siderbar_div">
+    <img
+    src="/uploads/banner2.jpg"
+    style="width: 100%;"
+  />
+  </div>
+
+  <br /><br />
+
+  <div class="mx-auto _siderbar_div">
+    <ul class="list-group">
+      {{- range .Site.Taxonomies.categories.ByCount }}
+        <li class="list-group-item"><a href="{{ "/categories/" | relLangURL }}{{ .Term | urlize }}">{{ .Term }}</a> ({{ .Count }})
+      {{- end }}
+    </ul>
+  </div>
+
+  <br /><br />
+
+  <div class="mx-auto _siderbar_div">
+    <ul class="list-group">
+      {{ range $items := .Site.Taxonomies.archives.Alphabetical.Reverse }}
+        <li class="list-group-item"><a href="{{ $.Site.BaseURL }}archives/{{ .Name | urlize | lower }}">{{ .Name }} ({{ .Count }})</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+</aside>

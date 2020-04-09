@@ -1,0 +1,28 @@
+<header>
+  <div class="nl-Hero" style="height: 56px;">
+    <nav class="navbar navbar-light">
+      <div class="blog_title">
+        <a href="/">{{ .Site.Title }}</a>
+      </div>
+      <button
+        type="button"
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#navbarList"
+        aria-controls="navbarList"
+        aria-expanded="false"
+        aria-label="ナビゲーションの切替"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarList" style="z-index: 2;">
+        <ul class="nav navbar-nav ml-auto">
+          {{- range .Site.Taxonomies.categories.ByCount }}
+            <li class="list-group-item"><a href="{{ "/categories/" | relLangURL }}{{ .Term | urlize }}">{{ .Term }}</a> ({{ .Count }})
+          {{- end }}
+        </ul>
+      </div>
+    </nav>
+    <div class="nl-Hero_start"></div>
+  </div>
+</header>

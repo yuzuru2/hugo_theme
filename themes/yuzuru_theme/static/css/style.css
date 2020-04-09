@@ -1,0 +1,354 @@
+@charset "utf-8";
+
+body {
+  margin: 0;
+}
+
+/* bootstrapの謎の右の余白を消す */
+#_body {
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+._navbar {
+  background-image: url(../img/hero.png);
+  background-color: #55c500;
+}
+
+/* index_header */
+.nl-Hero {
+  background-image: url(../img/hero.png);
+  background-color: #55c500;
+  height: 280px;
+}
+
+.blog_title {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.blog_title a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.nl-Hero_start {
+  padding: 30px 32px 0 32px;
+  text-align: center;
+}
+
+.nl-Hero_title {
+  font-size: 42px;
+  font-weight: 700;
+  font-feature-settings: 'palt';
+  color: #fff;
+}
+
+.nl-Hero_lead {
+  max-width: 100%;
+  padding-top: 24px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nl-Hero_lead p {
+  font-size: 16px;
+  font-feature-settings: 'pwid';
+  line-height: 2;
+  color: #fff;
+  display: inline-block;
+  text-align: left;
+}
+/* index_headerここまで */
+
+/* 主要タグ */
+main {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section {
+  padding-left: 20px;
+  width: 70%;
+}
+
+._index_article {
+  text-align: center;
+  width: 70%;
+  max-width: 780px;
+}
+
+aside {
+  width: 30%;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+}
+/* 主要タグここまで */
+
+/* 時間 */
+._time {
+  font-size: 13px;
+  color: rgb(153, 153, 153);
+}
+
+/* index list */
+._index_h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h2 a {
+  font-weight: 600;
+  color: #7b7b7b;
+  line-height: 40px;
+  font-size: 25px;
+  font-family: Noto, Hiragino Sans, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+._thumbnail {
+  width: 70%;
+  max-height: 300px;
+  flex-shrink: 0;
+}
+
+.readmore a {
+  border: 1px solid #909090;
+  color: #7b7b7b;
+  padding: 15px 33px 14px;
+}
+
+._card-text {
+  color: #7b7b7b;
+  line-height: 2;
+}
+/* index listここまで */
+
+/* カテゴリ */
+.it-Tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.it-Tags_item {
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 12px;
+}
+/* カテゴリここまで */
+
+/* single */
+.p-items_container {
+  background-color: #fff;
+  margin-left: 25px;
+}
+
+.p-items_article {
+  padding: 24px;
+}
+/* singleここまで */
+
+/* sidebar */
+._siderbar_div {
+  max-width: 300px;
+}
+
+._siderbar_div ul {
+  max-width: 280px;
+  margin: 10px;
+}
+
+/* sidebarここまで */
+
+/* 目次 */
+/* https://monoworks.co.jp/post/2019-04-27-hugo-toc/ */
+/* 目次部分に影を追加 */
+.toc-title {
+  box-shadow: 2px 2px 4px #ccc;
+  padding-bottom: 0.3em;
+}
+/* チェックボックスを非表示 */
+.toc-check {
+  display: none;
+}
+/* ラベル部分の修飾 */
+.toc-label {
+  background: #3f9fbf;
+  color: #fff;
+  display: flex;
+  margin-top: 0.5em;
+  padding: 6px 6px 0 12px;
+  height: 36px;
+}
+/* チェックボックスにチェックが入っていない（メニュー表示）状態の修飾 */
+.toc-chapter {
+  height: auto;
+  opacity: 1;
+  padding: 0 10px;
+  margin-left: 1.5em;
+  transition: 0.5s;
+  visibility: visible;
+  font-size: 0.9rem;
+}
+/* メニュー表示時のアイコン */
+.toc-label:after {
+  content: '\f106';
+  display: block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding: 0 0 0 20px;
+}
+/* チェックボックスにチェックが入った（メニュー非表示）状態の修飾 */
+.toc-check:checked ~ .toc-chapter {
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  visibility: hidden;
+}
+/* メニュー非表示時のアイコン */
+.toc-check:checked ~ .toc-label:after {
+  content: '\f107';
+  display: block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding: 0 0 0 20px;
+}
+/* メニューの修飾 */
+#TableOfContents > ul > li > ul {
+  display: block;
+  text-align: left;
+  list-style-type: disc;
+}
+#TableOfContents > ul > li > ul > li > ul {
+  padding-left: 0.75em;
+  list-style-type: circle;
+}
+/* 目次ここまで */
+
+/* スマホ用 */
+@media screen and (max-width: 768px) {
+  /* header */
+  .nl-Hero_title {
+    font-size: 36px;
+  }
+
+  .nl-Hero {
+    height: 450px;
+  }
+  /* headerここまで */
+
+  /* 主要タグ */
+  section {
+    padding: 0px;
+    width: 100%;
+  }
+
+  aside {
+    display: none;
+  }
+  /* 主要タグここまで */
+
+  ._index_article {
+    width: 100%;
+  }
+
+  /* single */
+  .p-items_container {
+    margin: 0;
+  }
+
+  .post_title {
+    font-size: 30px;
+  }
+
+  .post_h2 {
+    font-size: 27px;
+  }
+  /* singleここまで */
+}
+
+/* ソースコードハイライト */
+.xCodeBlock_title {
+  display: inline-block;
+  font-size: smaller;
+  border-radius: 0.5em 0.5em 0 0;
+  padding: 0 0.5em;
+  background: gray;
+  color: white;
+}
+
+.xCodeBlock_code {
+  margin-top: -30px;
+  /* overflow-wrap: break-word; */
+  /* overflow-x: auto; */
+}
+
+.xCodeBlock_code pre {
+  padding: 0.5em;
+  overflow-x: auto;
+  /* white-space: pre-wrap; */
+}
+/* ソースコードハイライトここまで */
+
+/* クリップボード */
+/* https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/ */
+.copy-code-button {
+  color: #272822;
+  background-color: #fff;
+  border-color: #272822;
+  border: 2px solid;
+  border-radius: 3px 3px 0px 0px;
+
+  /* right-align */
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+
+  margin-bottom: -2px;
+  padding: 3px 8px;
+  font-size: 0.8em;
+}
+
+.copy-code-button:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.copy-code-button:focus {
+  /* Avoid an ugly focus outline on click in Chrome,
+     but darken the button for accessibility.
+     See https://stackoverflow.com/a/25298082/1481479 */
+  background-color: #e6e6e6;
+  outline: 0;
+}
+
+.copy-code-button:active {
+  background-color: #d9d9d9;
+}
+
+.highlight pre {
+  /* Avoid pushing up the copy buttons. */
+  margin: 0;
+}
+/* クリップボードここまで */
+
+/* PC・タブレット用 */
+@media screen and (min-width: 768px) {
+  .advertisement {
+    display: none;
+  }
+}

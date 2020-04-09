@@ -1,0 +1,75 @@
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  {{ if not .Site.IsServer }} {{ with .Site.GoogleAnalytics }}
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id={{ . }}"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }} {{ end }}
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+  <!-- OGP -->
+  <meta property="fb:app_id" content="{{ .Site.Params.facebookAppId }}" />
+  <meta property="og:url" content="{{ .Site.BaseURL }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ .Title}}" />
+  <meta
+    property="og:description"
+    content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+  />
+  <meta property="og:site_name" content="{{ .Site.Title}}" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}uploads/favicon.ico" />
+
+  <!-- description -->
+  <meta
+    name="description"
+    content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+  />
+
+  <!-- bootstrap  -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+  <!-- font-awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+  />
+
+  <!-- favicon -->
+  <link rel="icon" href="{{ .Site.BaseURL }}/uploads/favicon.ico" />
+  <link
+    rel="apple-touch-icon"
+    href="{{ .Site.BaseURL }}uploads/apple-touch-icon.png"
+    sizes="180x180"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    href="{{ .Site.BaseURL }}uploads/android-touch-icon.png"
+    sizes="192x192"
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  {{ range .Page.Params.page_css }}
+  <link rel="stylesheet" href="{{.}}" />
+  {{ end }}
+</head>

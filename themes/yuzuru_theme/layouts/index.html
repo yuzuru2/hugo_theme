@@ -1,0 +1,72 @@
+{{ define "body" }} {{ partial "header/index_header.html" . }}
+<main>
+  <div class="row">
+    <section>
+      <article class="mx-auto _index_article">
+        {{- range .Paginator.Pages }}
+        <!-- card -->
+        <div class="card">
+          <div class="card-body">
+            <div class="_time">
+              <i class="fas fa-clock"></i>
+              <time>
+                {{.Date.Format "2006/01/02" }}
+              </time>
+            </div>
+
+            <br />
+
+            <h2 class="card-text">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            <br />
+
+            <div class="it-Tags">
+              {{- range .Params.categories -}}
+                  <a
+                  href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"
+                  class="it-Tags_item"
+                >
+                  <span>{{ . }}</span>
+                </a>
+              {{- end -}}
+            </div>
+          </div>
+
+          <div style="text-align:center;">
+            <a href="{{ .RelPermalink }}">
+              <img class="card-img-bottom _thumbnail" src="{{ if .Params.thumbnail  }} {{.Params.thumbnail}} {{ else }} {{"/img/no-image.gif"}} {{ end }}" alt="Card image">
+            </a>
+          </div>
+          
+          <div class="card-body">
+            <p class="card-text ._card-text">{{.Params.description}}</p>
+
+            <br />
+            <div class="readmore"><a href="{{ .RelPermalink }}">READ MORE</a></div>
+          </div>
+        </div>
+        <!-- cardここまで -->
+
+        <br />
+        {{- end }}
+        {{ template "_internal/pagination.html" . }} 
+      </article>
+
+      <!-- 広告 -->
+      <div class="mx-auto _siderbar_div advertisement">  
+        <img
+        src="/uploads/banner1.jpg"
+        class="d-block mx-auto"
+        style="width: 280px;"
+      />
+      </div>
+
+    </section>
+    {{ partial "sidebar" .}}
+  </div>
+</main>
+
+{{partial "footer"}}
+{{ end }}

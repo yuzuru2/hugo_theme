@@ -1,0 +1,16 @@
+baseURL = "https://yourdomain/"
+languageCode = "ja-jp"
+title = "your blog name"
+googleAnalytics = ""
+theme = "yuzuru_theme"
+hasCJKLanguage = true
+Paginate = 3
+
+[taxonomies]
+	category = "categories"
+	archive = "archives"
+
+[Params]
+description = "your blog description"
+facebookAppId = "123456"
+topH1 = "programming"
